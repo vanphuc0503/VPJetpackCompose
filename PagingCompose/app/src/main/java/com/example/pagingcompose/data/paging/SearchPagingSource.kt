@@ -8,7 +8,7 @@ import com.example.pagingcompose.util.Constants.ITEMS_PER_PAGE
 
 class SearchPagingSource(
     private val unsplashApi: UnsplashApi,
-    private val query: String
+        private val query: String
 ) : PagingSource<Int, UnsplashImage>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UnsplashImage> {
