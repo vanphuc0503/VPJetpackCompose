@@ -1,6 +1,7 @@
 package com.example.pagingcompose.screens.search
 
 import android.annotation.SuppressLint
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -39,7 +40,7 @@ fun SearchScreen(
 }
 
 @Composable
-@OptIn(ExperimentalMaterial3Api::class, ExperimentalCoilApi::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalCoilApi::class, ExperimentalMaterialApi::class)
 private fun SearchContent(
     searchQuery: String,
     onTextChange: (String) -> Unit,

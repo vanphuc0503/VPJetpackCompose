@@ -51,10 +51,15 @@ import com.example.pagingcompose.ui.theme.HeartRed
 
 @ExperimentalCoilApi
 @Composable
-fun ListContent(items: LazyPagingItems<UnsplashImage>, paddingValues: PaddingValues) {
+fun ListContent(
+    items: LazyPagingItems<UnsplashImage>,
+    paddingValues: PaddingValues
+) {
     Log.d("Error", items.loadState.toString())
     LazyColumn(
-        modifier = Modifier.padding(paddingValues).fillMaxSize(),
+        modifier = Modifier
+            .padding(paddingValues)
+            .fillMaxSize(),
         contentPadding = PaddingValues(all = 12.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
@@ -64,7 +69,7 @@ fun ListContent(items: LazyPagingItems<UnsplashImage>, paddingValues: PaddingVal
                 unsplashImage.id
             }
         ) { unsplashImage ->
-            unsplashImage?.let { UnsplashItem(unsplashImage = it) }
+            unsplashImage?.let { UnsplashItem(unsplashImage = unsplashImage) }
         }
     }
 }
